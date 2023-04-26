@@ -1,6 +1,7 @@
-/* Week 1:*/
-
-/*Create the tables in the database.*/
+/* 
+Week 1:
+Create the tables in the database.
+*/
 create table course(course_name varchar(10),
   		    course_id number, 
 		    department varchar(10));
