@@ -51,7 +51,6 @@ select distinct i.* from instructor i, teaches t where i.id = t.id;
 */
 select distinct i.name, c.title from instructor i, course c, teaches t where i.dept_name like 'Biology' and i.id = t.id and t.course_id = c.course_id;
 
-
 /*
 10. Find the set of all courses taught either in Fall 2009 or in Spring 2010, or both.
 */
