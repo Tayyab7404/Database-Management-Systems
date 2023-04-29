@@ -1,5 +1,6 @@
 /* 
-Week 1:
+WEEK 1:
+
 Create the tables in the database.
 */
 create table course(course_name varchar(10),
@@ -19,7 +20,7 @@ create table grade(id varchar(10),
 /*Alter the course table by adding a new attribute instructor.*/
 alter table course add instructor varchar(20);
 
-/*Alter the student table by modifying the datatype of Student_ID.*/
+/*Alter the student table by modifying the datatype of student_id.*/
 alter table student modify student_id varchar(10);
 
 /*Alter the course table by dropping instructor attribute.*/
