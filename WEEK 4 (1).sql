@@ -34,24 +34,29 @@ select dept_name, avg(salary) as "Average Salary" from instructor group by dept_
 /*
 7. Find the number of instructors in each department who teach a course in the Spring 2010 semester.
 */
-select i.dept_name, count(distinct(t.id)) as “Total Instructors” from instructor i, teaches t where semester like 'Spring' and year like 2010 and i.id = t.id group by i.dept_name;
+select i.dept_name, count(distinct(t.id)) as "Total Instructors" from instructor i, teaches t where semester like 'Spring' and year like 2010 and i.id = t.id group by i.dept_name;
 
 /*
 8. Find the department name and average salary of the department for only  those departments where the average salary of the instructors is more than $42,000.
 */
+select dept_name, avg(salary) as "Average Salary" from instructor where salary > 42000 group by dept_name;
 
 /*
 9. For each course section offered in 2009, find the average total credits (tot_cred) of all students enrolled in the section, if the section had at least 2 students.
 */
 
+
 /*
 10. For each department, find the maximum salary of instructors in that department. You may assume that every department has at least one instructor.
 */
+select dept_name, max(salary) as "Maximum Salary" from instructor group by dept_name;
 
 /*
 11.	For the student with ID 12345 (or any other value), show the total number of credits scored for all courses (taken by that student). Don't display the tot_creds value from the student table, you should use SQL aggregation on courses taken by the student.
 */
+select t.sec_id as "Section ID", avg(tot_cred) as "Average Credits" from takes t, student s where t.id = s.id and year = 2009 group by t.sec_id having count(t.sec_id) > 1;
 
 /*
 12.	Display the total credits for each of the students, along with the ID of the student; don't bother about the name of the student. (Don't display the tot_creds value from the student table, you should use SQL aggregation on courses taken by the student. For students who have not registered for any course, tot_creds should be 0)
 */
+select s.id as "Student ID", sum(credits) as "Total Credits" from student s, course c, takes t where t.id = s.id and c.course_id = t.course_id group by s.id;
