@@ -60,7 +60,7 @@ select dept_name from department where budget = (select max(budget) from departm
 /*
 12. Find the names of instructors who have not taught any course.
 */
-
+select i.id from instructor i where not exists(select t.id from teaches t where t.id = i.id);
 
 /*
 13. Find the IDs and names of all students who have not taken any course offering before Spring 2009.
