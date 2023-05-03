@@ -39,7 +39,7 @@ select i.dept_name, count(distinct(t.id)) as "Total Instructors" from instructor
 /*
 8. Find the department name and average salary of the department for only  those departments where the average salary of the instructors is more than $42,000.
 */
-select dept_name, avg(salary) as "Average Salary" from instructor group by dept_name HAVING avg(salary) >= 42000;
+select dept_name, avg(salary) as "Average Salary" from instructor group by dept_name having avg(salary) >= 42000;
 
 /*
 9. For each course section offered in 2009, find the average total credits (tot_cred) of all students enrolled in the section, if the section had at least 2 students.
