@@ -30,14 +30,12 @@ select s.id, c.course_id, c.title from student s, course c, takes t where s.id =
 select distinct i.name, t.course_id from instructor i, teaches t where i.dept_name like 'Comp. Sci.' and i.id = t.id;
 
 /*
-6. For all instructors in the university who have taught some course, find their names and the course ID of all courses they
-taught.
+6. For all instructors in the university who have taught some course, find their names and the course ID of all courses they taught.
 */
 select distinct i.name, t.course_id from instructor i, teaches t where i.id = t.id;
 
 /*
-7. Find the names of all instructors whose salary is greater than at least one instructor in the Biology department. Or Find
-the names of all instructors who earn more than the lowest paid instructor in the Biology department.
+7. Find the names of all instructors whose salary is greater than at least one instructor in the Biology department. Or Find the names of all instructors who earn more than the lowest paid instructor in the Biology department.
 */
 select name from instructor where salary > (select min(salary) from instructor where dept_name like 'Biology');
 
