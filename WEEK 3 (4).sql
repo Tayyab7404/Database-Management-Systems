@@ -67,5 +67,4 @@ select distinct s.name from student s, takes t, course c where s.id like t.id an
 /*
 13. Display the IDs of all instructors who have never taught a course. (Don’t write nested query)
 */
-
 (select id from instructor) minus (select id from teaches);
