@@ -40,30 +40,37 @@ select distinct(s.id) from student s where not exists((select course_id from cou
 /*
 8. Find all courses that were offered at most once in 2009.
 */
+select distinct(course_id) from takes where year = 2009 group by course_id having count(course_id) <= 1;
 
 /*
 9. Find all courses that were offered at least twice in 2009.
 */
+select distinct(course_id) from takes where year = 2009 group by course_id having count(course_id) >= 2;
 
 /*
 10. Find the average instructors salaries of those departments where the average salary is greater than $42000.
 */
+select dept_name, avg(salary) as "Average Salary" from instructor group by dept_name having avg(salary) >= 42000;
 
 /*
-11. Find the departments with the maximum budget.
+11. Find the department with the maximum budget.
 */
+select dept_name from department where budget = (select max(budget) from department);
 
 /*
 12. Find the names of instructors who have not taught any course.
 */
 
+
 /*
 13. Find the IDs and names of all students who have not taken any course offering before Spring 2009.
 */
 
+
 /*
 14. Find the lowest, across all departments, of the per-department maximum salary computed.
 */
+
 
 /*
 15. Display the IDs and names of the instructors who have taught all Comp. Sci. courses.
