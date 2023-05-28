@@ -1,49 +1,37 @@
-/* Errors when inserting data */
+/* INSERT statements constraint violation */
 
-/* course table, unique constraint */
-insert into course values('Data Structures', 'CS224', 'CSE');
+/* course table, UNIQUE constraint */
+insert into course values('Operating Systems', 'CS223', 'CSE');
 /*  
-insert into course values('Data Structures',
-                           *
-Error: UNIQUE constraint failed: course.course_name
+Error: UNIQUE constraint failed: course.course_id
 */
 
-/* course table, primary key constraint */
-insert into course values('DBMS', 'CS214', 'CSE');
+/* course table, PRIMARY KEY constraint */
+insert into course values('DBMS', 'CS223', 'CSE');
 /*
-insert into course values('DBMS',
-                              *
 Error: UNIQUE constraint failed: course.course_id
 */
 
 /* student table, NOT NULL constraint */
 insert into student values(NULL, 'Y21CS000', 'CS221', 'Sem4');
 /*
-insert into student values(NULL,
-                            *
 Error: NOT NULL constraint failed: student.name
 */
 
 /* student table, PRIMARY KEY constraint */
-insert into student values('Neeraj', 'Y21CS172', 'CS222', 'Sem4');
+insert into student values('Roshan', 'Y21CS172', 'CS222', 'Sem4');
 /*
-insert into student values('Neeraj',
-                             *
 Error: UNIQUE constraint failed: student.id
 */
 
-/* student table, foreign key constraint */
-insert into student values('Shreyas', 'Y21CS164', 'CS232', 'Sem5');
+/* student table, FOREIGN KEY constraint */
+insert into student values('Shreyas', 'Y21CS164', 'CS231', 'Sem5');
 /*
-insert into student values('Shreyas',
-*
 Error: FOREIGN KEY constraint failed
 */
 
-/* grade table, check constraint */
-insert into grade values('Y21CS164', 'Sem5', 'CS222', 12);
+/* grade table, CHECK constraint */
+insert into grade values('Y21CS172', 'Sem4', 'CS225', 12);
 /*
-insert into grade values('Y21CS164',
-*
-Error: CHECK constraint failed: grade >= 5 and grade <= 10
+Error: CHECK constraint failed: grade>=5 and grade<=10
 */

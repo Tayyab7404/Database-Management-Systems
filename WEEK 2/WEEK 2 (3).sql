@@ -1,56 +1,37 @@
-/* Update Statement Constraint Violation */
+/* UPDATE statements constraint violation */
 
-/* course table, unique constraint */
-update course set course_name='Python programming' where course_id='CS222';
+/* course table, UNIQUE constraint */
+update course set course_name='Operating Systems' where course_id='CS225';
 /*
-UPDATE course SET course_name='Python programming' WHERE course_id='CS222'
-*
-ERROR at line 4:
-ORA-00001: unique constraint (ROSHAN.SYS_C008264) violated
+Error: UNIQUE constraint failed: course.course_name
 */
 
 /* course table, primary key constraint */
-update course set course_id='CS125' where course_name='DBMS';
+update course set course_id='CS225' where course_name='Operating Systems';
 /*
-UPDATE course SET course_id='CS125' WHERE course_name='DBMS'
-*
-ERROR at line 13:
-ORA-00001: unique constraint (ROSHAN.SYS_C008263) violated
+Error: UNIQUE constraint failed: course.course_id
 */
 
 /* student table, NOT NULL constraint */
-update student set name=NULL where id='Y21CS160';
+update student set name=NULL where id='Y21CS172';
 /*
-UPDATE student SET name=NULL WHERE id='Y21CS160'
-                   *
-ERROR at line 22:
-ORA-01407: cannot update ("ROSHAN"."STUDENT"."NAME") to NULL
+Error: NOT NULL constraint failed: student.name
 */
 
 /* student table, PRIMARY KEY constraint */
-update student set id='Y21CS169' where name='Roshan Ali';
+update student set id='Y21CS185' where name='Tayyab';
 /*
-UPDATE student SET id='Y21CS169' WHERE name='Roshan Ali'
-*
-ERROR at line 31:
-ORA-00001: unique constraint (ROSHAN.SYS_C008266) violated
+Error: UNIQUE constraint failed: student.id
 */
 
-
 /* student table, FOREIGN KEY constraint */
-update student set course='CS232' where id='Y21CS169';
+update student set course='CS221' where id='Y21CS172';
 /*
-UPDATE student SET course='CS232' WHERE id='Y21CS169'
-*
-ERROR at line 41:
-ORA-02291: integrity constraint (ROSHAN.SYS_C008267) violated - parent key not found
+Error: FOREIGN KEY constraint failed
 */
 
 /* grade table, CHECK constraint */
-update grade set grade=2 where id='Y21CS160';
+update grade set grade=2 where id='Y21CS185';
 /*
-UPDATE grade SET grade=2 WHERE id='Y21CS160'
-*
-ERROR at line 50:
-ORA-02290: check constraint (ROSHAN.SYS_C008268) violated
+Error: CHECK constraint failed: grade>=5 and grade<=10
 */
