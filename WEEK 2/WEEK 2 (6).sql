@@ -1,1 +1,0 @@
-/* Adding the constraints using ALTER TABLE statements */
