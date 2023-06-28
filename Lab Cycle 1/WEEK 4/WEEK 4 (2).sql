@@ -66,12 +66,11 @@ select i.id from instructor i where not exists(select t.id from teaches t where 
 /*
 13. Find the IDs and names of all students who have not taken any course offering before Spring 2009.
 */
-
+(select id, name from student) minus (select s.id, s.name from student s, takes t where t.id=s.id and t.year<2009);
 
 /*
 14. Find the lowest, across all departments, of the per-department maximum salary computed.
 */
-
 
 /*
 15. Display the IDs and names of the instructors who have taught all Comp. Sci. courses.
