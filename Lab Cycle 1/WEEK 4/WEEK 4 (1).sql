@@ -59,6 +59,6 @@ select dept_name, max(salary) as "Maximum Salary" from instructor group by dept_
 select t.id, sum(credits) as "Total Credits" from student s,course c,takes t where s.id=t.id and c.course_id=t.course_id group by t.id having t.id=12345;
 
 /*
-12.	Display the total credits for each of the students, along with the ID of the student; don't bother about the name of the student. (Don't display the tot_creds value from the student table, you should use SQL aggregation on courses taken by the student. For students who have not registered for any course, tot_creds should be 0)
+12. Display the total credits for each of the students, along with the ID of the student; don't bother about the name of the student. (Don't display the tot_creds value from the student table, you should use SQL aggregation on courses taken by the student. For students who have not registered for any course, tot_creds should be 0)
 */
 select s.id as "Student ID", sum(credits) as "Total Credits" from student s, course c, takes t where t.id = s.id and c.course_id = t.course_id group by s.id;
