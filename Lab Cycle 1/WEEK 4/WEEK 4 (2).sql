@@ -4,7 +4,7 @@ WEEK 4:
 
 Write nested queries for answering the following queries that retrieve data from university database:
 
-1. Find the total number of (distinct) students who have taken course sections taught by the instructor with ID 110011
+1. Find the total number of (distinct) students who have taken course sections taught by the instructor with ID 10101.
 */
 select count(distinct(t.id)) as "Total Students" from takes t, teaches th where th.id = 10101 and t.course_id = th.course_id and t.sec_id = th.sec_id;
 
