@@ -4,18 +4,18 @@ WEEK 1:
 Create the tables in the database.
 */
 create table course(course_name varchar(10),
-					course_id number, 
-					department varchar(10));
+		    course_id number, 
+		    department varchar(10));
 
 create table student(name varchar(20),
-					 student_id number,
-					 course varchar(10),
-					 semester number);
+		     student_id number,
+		     course varchar(10),
+		     semester number);
 
 create table grade(id varchar(10),
-				   semester number, 
-				   course varchar(10),
-				   grade number);
+		   semester number, 
+		   course varchar(10),
+		   grade number);
 
 /*Alter the course table by adding a new attribute instructor.*/
 alter table course add instructor varchar(20);
