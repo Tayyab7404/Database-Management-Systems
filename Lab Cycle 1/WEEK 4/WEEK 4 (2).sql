@@ -71,7 +71,7 @@ select i.id from instructor i where not exists(select t.id from teaches t where 
 /*
 14. Find the lowest, across all departments, of the per-department maximum salary computed.
 */
-select min(minsal) from (select dept_name, min(salary) as minsal from instructor group by dept_name);
+select min(maxsal) from (select dept_name, max(salary) as maxsal from instructor group by dept_name);
 
 /*
 15. Display the IDs and names of the instructors who have taught all Comp. Sci. courses.
