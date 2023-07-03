@@ -76,3 +76,4 @@ select min(minsal) from (select dept_name, min(salary) as minsal from instructor
 /*
 15. Display the IDs and names of the instructors who have taught all Comp. Sci. courses.
 */
+select i.id, i.name from instructor i where not exists((select course_id from course where dept_name='Comp. Sci.') minus (select t.course_id from teaches t where t.id=i.id));
