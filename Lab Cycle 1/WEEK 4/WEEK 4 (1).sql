@@ -11,7 +11,7 @@ select building, avg(capacity) as "Average Capacity", max(capacity) as "Maximum 
 /*
 2. Display the least budget of the departments.
 */
-select min(budget) as Least_Budget from department group by dept_name;
+select min(budget) as Least_Budget from department;
 
 /*
 3. Find the total number of courses and credits offered by Biology department.
